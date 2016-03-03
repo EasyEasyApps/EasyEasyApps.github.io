@@ -3,7 +3,7 @@
 
 
 },{"./html/modal.html":2}],2:[function(_dereq_,module,exports){
-module.exports='<div style="display:none;position:fixed;width:100%;height:100%;top:0;left:0;">\n  <div class="__modal_backdrop__" style="width:100%;height:100%;position:absolute;top:0;left:0;"></div>\n  <div class="__modal_dialog__" style="z-index:1000;position:absolute;margin:auto;top:0;right:0;bottom:0;left:0;">\n  </div>\n</div>\n';
+module.exports='<div style="display:none;z-index:1;position:fixed;width:100%;height:100%;top:0;left:0;">\n  <div class="__modal_backdrop__" style="width:100%;height:100%;position:absolute;top:0;left:0;"></div>\n  <div class="__modal_dialog__"></div>\n</div>\n';
 
 
 },{}]},{},[1])
