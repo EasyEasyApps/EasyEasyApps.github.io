@@ -1,0 +1,11 @@
+!function(e){if("object"==typeof exports)module.exports=e();else if("function"==typeof define&&define.amd)define(e);else{var f;"undefined"!=typeof window?f=window:"undefined"!=typeof global?f=global:"undefined"!=typeof self&&(f=self),f.Modal=e()}}(function(){var define,module,exports;return (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(_dereq_,module,exports){
+"use strict";function addEvent(e,n,a){e.addEventListener?e.addEventListener(n,a,!1):e.attachEvent&&e.attachEvent("on"+n,function(){return a.apply(e,[window.event])})}function strToDom(e){var n=document.createElement("div");return n.innerHTML=e,n.children[0]}function hide(e){e.style.display="none"}var modalHtml=_dereq_("./html/modal.html");module.exports=function(e,n){var a=strToDom(modalHtml);return addEvent(window,"load",function(){document.body.appendChild(a);var t=a.getElementsByClassName("__modal_dialog__")[0],o=a.getElementsByClassName("__modal_backdrop__")[0],d="string"==typeof e?strToDom(e):e;t.appendChild(d);var l="undefined"==typeof n?{}:n,i=l.modalClass;i&&(a.className+=" "+i);var c=l.dialogClass;c&&(t.className+=" "+c);var s=l.backdropClass;s&&(o.className+=" "+s),addEvent(document.body,"click",function(){console.log("body click"),hide(a)});var r=a.getElementsByClassName("close"),m=function(){hide(a)};for(var v in r)addEvent(v,"click",m);addEvent(t,"click",function(e){console.log("__modal_dialog__ click");var n=e?e:window.event;n.cancelBubble=!0,n.stopPropagation&&n.stopPropagation()})}),a};
+
+
+},{"./html/modal.html":2}],2:[function(_dereq_,module,exports){
+module.exports='<div style="display:none;z-index:1;position:fixed;width:100%;height:100%;top:0;left:0;">\n  <div class="__modal_backdrop__" style="width:100%;height:100%;position:absolute;top:0;left:0;"></div>\n  <div class="__modal_dialog__"></div>\n</div>\n';
+
+
+},{}]},{},[1])
+(1)
+});
