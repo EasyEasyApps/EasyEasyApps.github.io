@@ -30,7 +30,7 @@
   }
   
   var urlEvents = getParametersByName("_ev");
-  if (urlEvents !== "undefined" && urlEvents.length > 0) {
+  if (urlEvents !== undefined && urlEvents.length > 0) {
     urlEvents.forEach(function(urlEvent) {
       var ev;
       try {
@@ -38,7 +38,7 @@
       } catch(e) {
         ev = {};
       }
-      if (ev["event"] !== "undefined") {
+      if (ev["event"] !== undefined) {
         dataLayer.push(ev);
       }
     });
